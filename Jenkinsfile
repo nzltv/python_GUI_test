@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'python'
+        label 'test-machine'
     }
     stages {
         stage('Run Python Script') {
