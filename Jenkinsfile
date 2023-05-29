@@ -5,10 +5,7 @@ pipeline {
     stages {
         stage('Run Python Script') {
             steps {
-                sh (
-                    script: 'python test_pywin.py',
-                    returnStatus: true
-                )
+                bat 'python test_pywin.py'
             }
         }
     }
