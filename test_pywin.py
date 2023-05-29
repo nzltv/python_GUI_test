@@ -3,11 +3,11 @@ from time import sleep
 import sys
 
 try:
-    app = Application().Start(cmd_line=u'"C:\\Program Files\\Notepad++\\notepad++.exe" ')
+    app = Application().Start(cmd_line=u'"C:\\Program Files (x86)\\Notepad++\\notepad++.exe" ')
     notepad = app[u'Notepad++']
-    notepad.Wait('ready')
+    notepad.wait('ready')
     systabcontrol = notepad.Tab
-    systabcontrol.Select(u'new 1')
+    #systabcontrol.select(u'new 1')
     panel = notepad.Scintilla
     panel.set_focus()
     panel.type_keys('asd1222')
