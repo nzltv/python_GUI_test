@@ -5,7 +5,12 @@ import pyautogui
 import os
 
 try:
+    user = os.getlogin()
+    sleep(5)
     app = Application().Start(cmd_line=u'"C:\\Program Files (x86)\\Notepad++\\notepad++.exe" ')
+    sleep(5)
+    myScreenshot = pyautogui.screenshot()
+    myScreenshot.save(f'C:\Jenkins\screenshots\{user}.png')
     print('step_1')
     notepad = app[u'Notepad++']
     notepad.wait('ready')
@@ -25,7 +30,6 @@ try:
     #Sub.Dialog.print_control_identifiers()
     Sub.Dialog.Сохранить.click_input()
     print('step_5')
-    user = os.getlogin()
     myScreenshot = pyautogui.screenshot()
     myScreenshot.save(f'C:\Jenkins\screenshots\{user}.png')
     sleep(10)
