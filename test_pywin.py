@@ -5,8 +5,6 @@ import pyautogui
 import os
 
 try:
-    while True:
-        print('asdadfasdf')
     user = os.getlogin()
     sleep(5)
     app = Application().Start(cmd_line=u'"C:\\Program Files (x86)\\Notepad++\\notepad++.exe" ')
