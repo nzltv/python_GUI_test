@@ -6,11 +6,13 @@ import os
 
 try:
     user = os.getlogin()
+    curr_dir = os.path.dirname(os.path.realpath(__file__))
+
     sleep(5)
     app = Application().Start(cmd_line=u'"C:\\Program Files (x86)\\Notepad++\\notepad++.exe" ')
     sleep(5)
     myScreenshot = pyautogui.screenshot()
-    myScreenshot.save(f'C:\Jenkins\screenshots\{user}.png')
+    myScreenshot.save(f'{curr_dir}\\{user}_1.png')
     print('step_1')
     notepad = app[u'Notepad++']
     notepad.wait('ready')
@@ -31,7 +33,7 @@ try:
     Sub.Dialog.Сохранить.click_input()
     print('step_5')
     myScreenshot = pyautogui.screenshot()
-    myScreenshot.save(f'C:\Jenkins\screenshots\{user}.png')
+    myScreenshot.save(f'{curr_dir}\\{user}_2.png')
     sleep(10)
     app.Kill_()
 except Exception as e:
